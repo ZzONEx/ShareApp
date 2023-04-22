@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="center"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/shareText"
+        android:layout_width="394dp"
+        android:layout_height="40dp"
+        android:text="Привет от старых штеблет"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <ImageView
+        android:id="@+id/shareImg"
+        android:layout_width="227dp"
+        android:layout_height="231dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/shareText"
+        app:layout_constraintStart_toStartOf="@+id/shareText"
+        app:layout_constraintTop_toBottomOf="@+id/shareText"
+        app:srcCompat="@drawable/ic_baseline_image_search_24" />
+
+    <Button
+        android:id="@+id/btnShareText"
+        android:layout_width="383dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:text="Отправить текст"
+        app:layout_constraintEnd_toEndOf="@+id/shareText"
+        app:layout_constraintStart_toStartOf="@+id/shareText"
+        app:layout_constraintTop_toBottomOf="@+id/shareImg" />
+
+    <Button
+        android:id="@+id/btnShareImg"
+        android:layout_width="383dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:text="Отправить картинку"
+        app:layout_constraintEnd_toEndOf="@+id/shareText"
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintStart_toStartOf="@+id/shareText"
+        app:layout_constraintTop_toBottomOf="@+id/btnShareText" />
+
+    <Button
+        android:id="@+id/btnShareAll"
+        android:layout_width="383dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:text="Отправить всё"
+        app:layout_constraintEnd_toEndOf="@+id/shareText"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/shareText"
+        app:layout_constraintTop_toBottomOf="@+id/btnShareImg" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
