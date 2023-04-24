@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             pickImage()
 
         }
-        binding.shareText.setOnClickListener {
+        binding.btnShareText.setOnClickListener {
             textToShare = binding.shareText.text.toString()
             if (textToShare.isEmpty()) {
                 showToast("Введите текст")
@@ -46,6 +46,29 @@ class MainActivity : AppCompatActivity() {
                 shareImage()
             }
         }
+        binding.btnShareAll.setOnClickListener {
+            textToShare = binding.shareText.text.toString()
+            if (textToShare.isEmpty()) {
+                showToast("Введите текст")
+
+            } else if (imageUri == null)
+                showToast("Выберите картинку")
+            else {
+                shareAll()
+            }
+
+        }
+    }
+
+    private fun shareAll() {
+        val contentUri = getContentUri()
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = "image/plain"
+        intent.putExtra(Intent.EXTRA_STREAM, contentUri)
+        intent.putExtra(Intent.EXTRA_TEXT, textToShare)
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Картинка  с текстом из приложения ShareBomjik")
+        intent.flags = Intent.FLAG_GRANT_READ_URI_PERMISSION
+        startActivity(Intent.createChooser(intent, "Выберите приложение:"))
     }
 
     private fun shareImage() {
